@@ -114,7 +114,7 @@ export const TEMPLATES = [
       name: 'Product — Pulse for Contact Center',
       sub: 'Product banner',
       img: 'banner_pulse_contact_center',
-      href: 'https://www.pindrop.com/',
+      href: 'https://www.pindrop.com/pulse-for-contact-centers',
       imgAlt: 'Pindrop Pulse for Contact Center'
     },
     {
@@ -122,7 +122,7 @@ export const TEMPLATES = [
       name: 'Product — Pulse for Meetings',
       sub: 'Product banner',
       img: 'banner_pulse_meetings',
-      href: 'https://www.pindrop.com/',
+      href: 'https://www.pindrop.com/pulse-for-meetings',
       imgAlt: 'Pindrop Pulse for Meetings'
     },
     {
@@ -130,7 +130,7 @@ export const TEMPLATES = [
       name: 'Product — BotStopper',
       sub: 'Product banner',
       img: 'banner_botstopper',
-      href: 'https://www.pindrop.com/',
+      href: 'https://www.pindrop.com/botstopper',
       imgAlt: 'Pindrop BotStopper'
     },
     {
@@ -146,7 +146,7 @@ export const TEMPLATES = [
       name: 'Latest report',
       sub: '6 Attacks Every Enterprise Should Know',
       img: 'banner_report',
-      href: 'https://www.pindrop.com/',
+      href: 'https://www.pindrop.com/resources/report/industry-briefing-the-six-high-cost-ai-attacks',
       imgAlt: 'Pindrop report: 6 Attacks Every Enterprise Should Know'
     }
   ];
