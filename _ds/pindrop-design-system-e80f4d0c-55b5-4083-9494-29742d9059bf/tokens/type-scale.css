@@ -1,0 +1,7 @@
+:root{
+--text-display-xl:120px;--text-display-l:80px;--text-display-m:50px;--text-display-s:40px;
+--text-h1:32px;--text-h2:25.7px;--text-h3:20px;
+--text-body-l:20px;--text-body:16px;--text-body-s:14px;--text-caption:12px;
+--lh-tight:1.1; /* @kind other */--lh-normal:1.4; /* @kind other */--lh-loose:1.5; /* @kind other */
+--tracking-display:-0.05em;--tracking-mono:0.02em;
+}

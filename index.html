@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/pindrop-design-system-e80f4d0c-55b5-4083-9494-29742d9059bf/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/pindrop-design-system-e80f4d0c-55b5-4083-9494-29742d9059bf/tokens/fig-tokens.css">
+  <link rel="stylesheet" href="_ds/pindrop-design-system-e80f4d0c-55b5-4083-9494-29742d9059bf/tokens/type-scale.css">
+  <link rel="stylesheet" href="_ds/pindrop-design-system-e80f4d0c-55b5-4083-9494-29742d9059bf/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/pindrop-design-system-e80f4d0c-55b5-4083-9494-29742d9059bf/tokens/icons.css">
+  <link rel="stylesheet" href="_ds/pindrop-design-system-e80f4d0c-55b5-4083-9494-29742d9059bf/components/product-ui/fig-assets.css">
+  <link rel="stylesheet" href="_ds/pindrop-design-system-e80f4d0c-55b5-4083-9494-29742d9059bf/styles.css">
+  <script src="_ds/pindrop-design-system-e80f4d0c-55b5-4083-9494-29742d9059bf/_ds_bundle.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; }
+    body { -webkit-font-smoothing: antialiased; }
+    a { color: var(--accent-orange-default, #FF5100); }
+    a:hover { color: var(--core-background-inverse, #140700); }
+  </style>
+</helmet>
+
+<div style="font-family:'Geist',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--neutral-100,#F2F0EB);color:var(--neutral-950,#140700);min-height:100vh;">
+
+  <header style="background:var(--neutral-950,#140700);color:#fff;padding:20px 32px;display:flex;align-items:center;gap:16px;border-bottom:4px solid var(--accent-orange-default,#FF5100);flex-wrap:wrap;">
+    <img src="assets/Pindrop-logo-2026_white.svg" alt="Pindrop" style="height:24px;width:auto;">
+    <h1 style="font-size:18px;font-weight:500;margin:0;letter-spacing:0.2px;">Email signature generator</h1>
+    <span style="margin-left:auto;font-family:'Geist Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.04em;color:var(--neutral-400,#A7A092);">For Gmail</span>
+  </header>
+
+  <div style="max-width:1280px;margin:0 auto;padding:32px;display:flex;flex-wrap:wrap;gap:32px;">
+
+    <aside style="flex: 1 1 360px; background: #fff; border: 1px solid var(--neutral-200,#E7E2D8); border-radius: 8px; padding: 28px; box-shadow: 0 1px 2px rgba(20,7,0,0.04); min-width: 0; border-width: 0px">
+      <h2 style="font-family:'Geist Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent-orange-default,#FF5100);margin:0 0 4px;font-weight:600;">Step 1</h2>
+      <h3 style="font-size:20px;margin:0 0 20px;font-weight:600;color:var(--neutral-950,#140700);">Your details</h3>
+
+      <div style="margin-bottom:18px;">
+        <label for="f-name" style="display:block;font-size:13px;font-weight:500;margin-bottom:6px;color:var(--neutral-950,#140700);">Full name</label>
+        <input type="text" id="f-name" value="{{ name }}" onChange="{{ onNameChange }}" autocomplete="off" style="width:100%;box-sizing:border-box;padding:10px 12px;border:1.5px solid var(--neutral-200,#E7E2D8);border-radius:6px;font-family:inherit;font-size:14px;background:#fff;color:var(--neutral-950,#140700);">
+      </div>
+
+      <div style="margin-bottom:18px;">
+        <label for="f-title" style="display:block;font-size:13px;font-weight:500;margin-bottom:6px;color:var(--neutral-950,#140700);">Job title</label>
+        <input type="text" id="f-title" value="{{ title }}" onChange="{{ onTitleChange }}" autocomplete="off" style="width:100%;box-sizing:border-box;padding:10px 12px;border:1.5px solid var(--neutral-200,#E7E2D8);border-radius:6px;font-family:inherit;font-size:14px;background:#fff;color:var(--neutral-950,#140700);">
+      </div>
+
+      <div style="margin-bottom:18px;">
+        <label for="f-email" style="display:block;font-size:13px;font-weight:500;margin-bottom:6px;color:var(--neutral-950,#140700);">Email <span style="font-weight:400;color:var(--neutral-700,#5A524F);font-size:12px;">(optional)</span></label>
+        <input type="email" id="f-email" value="{{ email }}" onChange="{{ onEmailChange }}" placeholder="name@pindrop.com" autocomplete="off" style="width:100%;box-sizing:border-box;padding:10px 12px;border:1.5px solid var(--neutral-200,#E7E2D8);border-radius:6px;font-family:inherit;font-size:14px;background:#fff;color:var(--neutral-950,#140700);">
+      </div>
+
+      <div style="margin-bottom:18px;">
+        <label for="f-phone" style="display:block;font-size:13px;font-weight:500;margin-bottom:6px;color:var(--neutral-950,#140700);">Phone <span style="font-weight:400;color:var(--neutral-700,#5A524F);font-size:12px;">(optional)</span></label>
+        <input type="tel" id="f-phone" value="{{ phone }}" onChange="{{ onPhoneChange }}" placeholder="+1 555 123 4567" autocomplete="off" style="width:100%;box-sizing:border-box;padding:10px 12px;border:1.5px solid var(--neutral-200,#E7E2D8);border-radius:6px;font-family:inherit;font-size:14px;background:#fff;color:var(--neutral-950,#140700);">
+      </div>
+
+      <div style="margin-bottom:6px;">
+        <label for="f-ooo" style="display:block;font-size:13px;font-weight:500;margin-bottom:6px;color:var(--neutral-950,#140700);">Upcoming OOO <span style="font-weight:400;color:var(--neutral-700,#5A524F);font-size:12px;">(optional)</span></label>
+        <input type="text" id="f-ooo" value="{{ ooo }}" onChange="{{ onOooChange }}" placeholder="May 5-9, back May 12" autocomplete="off" style="width:100%;box-sizing:border-box;padding:10px 12px;border:1.5px solid var(--neutral-200,#E7E2D8);border-radius:6px;font-family:inherit;font-size:14px;background:#fff;color:var(--neutral-950,#140700);">
+      </div>
+
+      <h2 style="font-family:'Geist Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent-orange-default,#FF5100);margin:28px 0 4px;font-weight:600;">Step 2</h2>
+      <h3 style="font-size:20px;margin:0 0 16px;font-weight:600;color:var(--neutral-950,#140700);">Pick a banner</h3>
+
+      <div style="display:grid;grid-template-columns:1fr;gap:8px;">
+        <sc-for list="{{ templateCards }}" as="tpl" hint-placeholder-count="3">
+          <div onClick="{{ tpl.onSelect }}" style="{{ tpl.cardStyle }}">
+            <div style="{{ tpl.swatchStyle }}">
+              <sc-if value="{{ tpl.noBanner }}" hint-placeholder-val="{{ false }}">No banner</sc-if>
+            </div>
+            <div style="font-size:13px;font-weight:500;line-height:1.3;">
+              {{ tpl.name }}
+              <small style="display:block;color:var(--neutral-700,#5A524F);font-weight:400;font-size:11px;margin-top:1px;">{{ tpl.sub }}</small>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </aside>
+
+    <section style="flex: 2 1 480px; background: #fff; border: 1px solid var(--neutral-200,#E7E2D8); border-radius: 8px; padding: 28px; box-shadow: 0 1px 2px rgba(20,7,0,0.04); min-width: 0; border-width: 0px">
+      <h2 style="font-family:'Geist Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent-orange-default,#FF5100);margin:0 0 4px;font-weight:600;">Step 3</h2>
+      <h3 style="font-size:20px;margin:0 0 20px;font-weight:600;color:var(--neutral-950,#140700);">Preview &amp; copy</h3>
+
+      <div style="border-radius: 10px; padding: 24px; border: 1px dashed var(--neutral-200,#E7E2D8); overflow: auto; background-color: #FFFFFF">
+        <div style="font-family:'Geist Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:0.06em;color:var(--neutral-700,#5A524F);margin-bottom:12px;font-weight:500;">Live preview</div>
+        <div ref="{{ previewRef }}"></div>
+      </div>
+
+      <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;align-items:center;">
+        <button onClick="{{ copySignature }}" style="font-family: Geist Mono; font-size: 14px; font-weight: 600; padding: 12px 22px; border-radius: 4px; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; background: var(--accent-orange-default,#FF5100); color: #fff">
+          <span class="material-symbols-outlined" style="font-size:18px;font-variation-settings:'wght' 300;">content_copy</span>
+          Copy signature
+        </button>
+        <button onClick="{{ downloadHTML }}" style="font-family: Geist Mono; font-size: 14px; font-weight: 600; padding: 12px 22px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--neutral-950,#140700); border: 1.5px solid var(--neutral-200,#E7E2D8); border-color: var(--background-inverse)">
+          <span class="material-symbols-outlined" style="font-size:18px;font-variation-settings:'wght' 300;">download</span>
+          Download HTML
+        </button>
+        <div style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--neutral-700,#5A524F);font-family:'Geist Mono',monospace;margin-left:auto;" title="Gmail signature limit">
+          <span style="{{ sizeDotStyle }}"></span>
+          <span style="{{ sizeTextStyle }}">{{ sizeText }}</span>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px; padding: 18px 20px; background: var(--accent-cyan-subtle,#EAF8F9); border-left: 3px solid var(--accent-cyan-default,#B0E7EB); border-radius: 0px; font-size: 13px; line-height: 1.55; color: var(--neutral-950,#140700)">
+        <strong>How to install in Gmail</strong>
+        <ol style="margin:8px 0 0 18px;padding:0;">
+          <li style="margin-bottom:4px;">Click <em>Copy signature</em> above.</li>
+          <li style="margin-bottom:4px;">Open Gmail → <strong>Settings (gear icon)</strong> → <strong>See all settings</strong>.</li>
+          <li style="margin-bottom:4px;">Scroll to the <strong>Signature</strong> section and click <strong>Create new</strong> (or pick an existing one).</li>
+          <li style="margin-bottom:4px;">Paste (<kbd>⌘V</kbd> or <kbd>Ctrl+V</kbd>) into the signature editor.</li>
+          <li style="margin-bottom:4px;">Scroll down and click <strong>Save Changes</strong>.</li>
+        </ol>
+      </div>
+
+      <details style="margin-top:18px;border:1px solid var(--neutral-200,#E7E2D8);border-radius:6px;background:#fff;">
+        <summary style="cursor:pointer;padding:12px 16px;font-weight:500;font-size:13px;color:var(--neutral-950,#140700);user-select:none;">View HTML source</summary>
+        <pre style="margin:0;padding:14px 16px;font-family:'Geist Mono',monospace;font-size:11px;background:var(--neutral-950,#140700);color:#F2F0EB;border-radius:0 0 6px 6px;overflow:auto;max-height:280px;white-space:pre-wrap;word-break:break-all;">{{ sourceCode }}</pre>
+      </details>
+    </section>
+  </div>
+
+  <div style="{{ toastStyle }}">{{ toastMsg }}</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;bannerPosition&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;bottom&quot;,&quot;options&quot;:[&quot;bottom&quot;,&quot;top&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;charLimit&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:10000,&quot;min&quot;:5000,&quot;max&quot;:20000,&quot;step&quot;:500,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+class Component extends DCLogic {
+  state = {
+    name: 'First Last',
+    title: 'Your Title Here',
+    email: '',
+    phone: '',
+    ooo: '',
+    templateId: 'time',
+    data: null,
+    toastMsg: '',
+    toastVisible: false,
+    toastError: false
+  };
+
+  previewRef = React.createRef();
+
+  componentDidMount() {
+    import('./signature-data.js').then((mod) => {
+      this.setState({ data: mod }, () => this.paintPreview());
+    });
+  }
+
+  componentDidUpdate() {
+    this.paintPreview();
+  }
+
+  paintPreview() {
+    if (!this.previewRef.current || !this.state.data) return;
+    this.previewRef.current.innerHTML = this.buildHtml();
+  }
+
+  buildHtml() {
+    const { data } = this.state;
+    if (!data) return '';
+    const bannerPosition = this.props.bannerPosition ?? 'bottom';
+    return data.buildSignature(this.state, data.TEMPLATES, data.IMAGES, bannerPosition);
+  }
+
+  showToast(msg, isError) {
+    clearTimeout(this._toastTimer);
+    this.setState({ toastMsg: msg, toastVisible: true, toastError: !!isError });
+    this._toastTimer = setTimeout(() => this.setState({ toastVisible: false }), 3500);
+  }
+
+  async copySignature() {
+    const html = this.buildHtml();
+    const tmp = document.createElement('div');
+    tmp.innerHTML = html;
+    const text = tmp.innerText;
+    try {
+      if (navigator.clipboard && window.ClipboardItem) {
+        const item = new ClipboardItem({
+          'text/html': new Blob([html], { type: 'text/html' }),
+          'text/plain': new Blob([text], { type: 'text/plain' })
+        });
+        await navigator.clipboard.write([item]);
+        this.showToast('Signature copied — paste into Gmail signature settings');
+        return;
+      }
+    } catch (e) {}
+    try {
+      const range = document.createRange();
+      range.selectNodeContents(this.previewRef.current);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      const ok = document.execCommand('copy');
+      sel.removeAllRanges();
+      if (ok) this.showToast('Signature copied — paste into Gmail signature settings');
+      else this.showToast('Copy failed. Use the Download HTML button.', true);
+    } catch (e) {
+      this.showToast('Copy failed. Use the Download HTML button.', true);
+    }
+  }
+
+  downloadHTML() {
+    const html = this.buildHtml();
+    const full = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>Pindrop Signature</title></head><body style="margin:24px;font-family:Geist,Arial,sans-serif;">${html}</body></html>`;
+    const blob = new Blob([full], { type: 'text/html' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `pindrop-signature-${this.state.templateId}.html`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    this.showToast('HTML file downloaded');
+  }
+
+  renderVals() {
+    const { data, name, title, email, phone, ooo, templateId, toastMsg, toastVisible, toastError } = this.state;
+    const templates = data ? data.TEMPLATES : [];
+    const html = this.buildHtml();
+    const len = html.length;
+    const limit = this.props.charLimit ?? 10000;
+    let dotColor = 'var(--accent-green-default,#3FA34D)';
+    let textColor = 'var(--neutral-700,#5A524F)';
+    let fontWeight = '400';
+    if (len > limit) { dotColor = 'var(--accent-orange-default,#FF5100)'; textColor = 'var(--accent-orange-default,#FF5100)'; fontWeight = '600'; }
+    else if (len > limit * 0.85) { dotColor = '#DE9100'; }
+
+    const templateCards = templates.map((tpl) => {
+      const active = tpl.id === templateId;
+      const cardStyle = `border:1.5px solid ${active ? 'var(--accent-orange-default,#FF5100)' : 'var(--neutral-200,#E7E2D8)'};border-radius:10px;padding:10px 12px;cursor:pointer;display:flex;align-items:center;gap:10px;background:${active ? 'var(--accent-orange-subtle,#FFF1EC)' : '#fff'};`;
+      const swatchStyle = (tpl.img && data && data.IMAGES[tpl.img])
+        ? `width:56px;height:24px;border-radius:4px;flex-shrink:0;background-size:cover;background-position:center;background-image:url('${data.IMAGES[tpl.img]}');`
+        : `width:56px;height:24px;border-radius:4px;flex-shrink:0;background:var(--neutral-950,#140700);display:flex;align-items:center;justify-content:center;color:#fff;font-size:9px;letter-spacing:1px;text-transform:uppercase;`;
+      return {
+        id: tpl.id, name: tpl.name, sub: tpl.sub, noBanner: !tpl.img,
+        cardStyle, swatchStyle,
+        onSelect: () => this.setState({ templateId: tpl.id })
+      };
+    });
+
+    return {
+      name, title, email, phone, ooo,
+      onNameChange: (e) => this.setState({ name: e.target.value }),
+      onTitleChange: (e) => this.setState({ title: e.target.value }),
+      onEmailChange: (e) => this.setState({ email: e.target.value }),
+      onPhoneChange: (e) => this.setState({ phone: e.target.value }),
+      onOooChange: (e) => this.setState({ ooo: e.target.value }),
+      templateCards,
+      previewRef: this.previewRef,
+      sizeText: `${len.toLocaleString()} / ${limit.toLocaleString()} chars`,
+      sizeDotStyle: `width:8px;height:8px;border-radius:50%;background:${dotColor};flex-shrink:0;`,
+      sizeTextStyle: `color:${textColor};font-weight:${fontWeight};`,
+      sourceCode: html,
+      copySignature: () => this.copySignature(),
+      downloadHTML: () => this.downloadHTML(),
+      toastMsg,
+      toastStyle: `position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(${toastVisible ? '0' : '20px'});background:${toastError ? 'var(--status-critical,#C62828)' : 'var(--neutral-950,#140700)'};color:#fff;padding:12px 20px;border-radius:6px;font-size:14px;font-weight:500;opacity:${toastVisible ? 1 : 0};transition:opacity .25s, transform .25s;pointer-events:none;z-index:1000;box-shadow:0 8px 24px rgba(0,0,0,0.2);`
+    };
+  }
+}
+
+</script>
+</body>
+</html>
